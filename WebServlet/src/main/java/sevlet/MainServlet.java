@@ -1,6 +1,7 @@
 package sevlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class MainServlet
  */
-@WebServlet("/MainServlet")
+@WebServlet(name="test2",urlPatterns = {"/WebServlet/MainServlet"})
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -33,6 +34,13 @@ public class MainServlet extends HttpServlet {
 		
 		
 		System.out.println("hello waikon");
+		String Name =request.getParameter("name");
+		PrintWriter pw =response.getWriter();
+		pw.println("<html>");
+		pw.println("<body>");
+		pw.println("<html>");
+		pw.println("<h1>ようこそ"+Name+"さん");
+		pw.println("</html>");
 	}
 
 	/**
